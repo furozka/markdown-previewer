@@ -1,0 +1,2 @@
+1-some markdown features not working like # headings, img etc. look for them
+2-design better style.
