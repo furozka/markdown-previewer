@@ -32,7 +32,8 @@ Numbered list:
 The rain---not the reign---in
 Spain.
 
- *[Herman Fassett](https://freecodecamp.com/hermanfassett)*`;
+ *[Herman Fassett](https://freecodecamp.com/hermanfassett)*
+`;
 
 const initialState ={
     textCurrent: 'this is user input',
@@ -50,8 +51,16 @@ export const markdownSlicer = createSlice({
             state.textUser = action.payload
         },
         showHelp: (state)=>{
-            state.isShowingHelp = !state.isShowingHelp
-        }
+            
+            if(state.isShowingHelp){
+                state.textCurrent = state.textUser
+                state.isShowingHelp = false
+            }else{
+                state.textCurrent = state.textHelp
+                state.isShowingHelp = true
+            }
+        },
+        
     }
 })
 
